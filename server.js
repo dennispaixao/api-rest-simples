@@ -8,7 +8,8 @@ app.use(bodyParser.json());
 // Configuração da conexão com o banco de dados PostgreSQL
 const pgp = require("pg-promise")();
 const db = pgp({
-  connectionString: "postgres://postgres:postgre@localhost:5432/api_rest",
+  connectionString:
+    "postgres://dennis:MvdVtecDx4fazqVXBW0tBKTODbSKA79f@dpg-ckrv3810at9c73bt1lmg-a/api_rest_zgyn",
 });
 
 // Rota para buscar todos os itens no banco de dados
