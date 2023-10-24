@@ -11,16 +11,10 @@ const db = require("./db");
 app.use(bodyParser.json());
 
 // Configurar o banco de dados antes de iniciar a API
-setupDatabase()
-  .then(() => {
-    // Rota principal
-    app.use("/alunos", alunosRoutes);
 
-    // Iniciar o servidor
-    app.listen(port, () => {
-      console.log(`API está rodando na porta ${port}`);
-    });
-  })
-  .catch((err) => {
-    console.error("Erro na configuração do banco de dados:", err);
-  });
+app.use("/alunos", alunosRoutes);
+
+// Iniciar o servidor
+app.listen(port, () => {
+  console.log(`API está rodando na porta ${port}`);
+});
