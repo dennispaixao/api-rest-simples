@@ -3,8 +3,6 @@ const bodyParser = require("body-parser");
 const app = express();
 const port = 3000;
 
-const setupDatabase = require("./dbSetup"); // Importe a função de configuração do banco de dados
-
 const alunosRoutes = require("./routes/alunosRoutes");
 const db = require("./db");
 
