@@ -1,0 +1,160 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "API ESCOLA",
+      "version": "1.0.0"
+    },
+    "paths": {
+      "/alunos": {
+        "get": {
+          "summary": "Obter lista de alunos",
+          "description": "Retorna uma lista de alunos.",
+          "responses": {
+            "200": {
+              "description": "Uma lista de alunos."
+            },
+            "500": {
+              "description": "Erro interno do servidor. Algo deu errado."
+            }
+          }
+        },
+        "post": {
+          "summary": "Adicionar aluno",
+          "description": "Adiciona um novo aluno.",
+          "requestBody": {
+            "description": "Dados do aluno",
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Aluno"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Aluno adicionado com sucesso."
+            },
+            "500": {
+              "description": "Erro interno do servidor. Algo deu errado."
+            }
+          }
+        }
+      },
+      "/alunos/{id}": {
+        "get": {
+          "summary": "Buscar aluno por ID",
+          "description": "Retorna os detalhes de um aluno pelo ID.",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Detalhes do aluno."
+            },
+            "404": {
+              "description": "Aluno não encontrado."
+            }
+          }
+        },
+        
+       
+         "put": {
+  "summary": "Atualizar aluno",
+  "description": "Atualiza os detalhes de um aluno pelo ID.",
+  "parameters": [
+    {
+      "name": "id",
+      "in": "path",
+      "required": true,
+      "schema": {
+        "type": "integer"
+      }
+    }
+  ],
+  "requestBody": {
+    "description": "Dados atualizados do aluno",
+    "required": true,
+    "content": {
+      "application/json": {
+        "schema": {
+          "$ref": "#/components/schemas/Aluno"
+        }
+      }
+    }
+  },
+  "responses": {
+    "200": {
+      "description": "Aluno atualizado com sucesso."
+    },
+    "404": {
+      "description": "Aluno não encontrado."
+    }
+  }
+},
+"delete": {
+  "summary": "Excluir aluno",
+  "description": "Exclui um aluno pelo ID.",
+  "parameters": [
+    {
+      "name": "id",
+      "in": "path",
+      "required": true,
+      "schema": {
+        "type": "integer"
+      }
+    }
+  ],
+  "responses": {
+    "200": {
+      "description": "Aluno excluído com sucesso."
+    },
+    "404": {
+      "description": "Aluno não encontrado."
+    }
+  }
+}
+        }
+      },
+    
+    "components": {
+      "schemas": {
+        "Aluno": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "nome": {
+              "type": "string"
+            },
+            "idade": {
+              "type": "integer"
+            },
+            "nota1": {
+              "type": "number"
+            },
+            "nota2": {
+              "type": "number"
+            },
+            "professor": {
+              "type": "string"
+            },
+            "sala": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+}
+  
+  

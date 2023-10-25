@@ -1,0 +1,27 @@
+components:
+  schemas:
+    Aluno:
+      type: object
+      properties:
+        id:
+          type: integer
+        nome:
+          type: string
+        idade:
+          type: integer
+        nota1:
+          type: number
+        nota2:
+          type: number
+        professor:
+          type: string
+        sala:
+          type: string
+      example:
+        id: 1
+        nome: João Silva
+        idade: 18
+        nota1: 90
+        nota2: 85
+        professor: Maria
+        sala: A1

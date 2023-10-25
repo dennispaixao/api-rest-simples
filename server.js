@@ -9,6 +9,10 @@ const db = require("./db");
 app.use(bodyParser.json());
 
 // Configurar o banco de dados antes de iniciar a API
+const swaggerUi = require("swagger-ui-express");
+const swaggerSpec = require("./swaggerConfig.json"); // Importe o arquivo de configuração do Swagger
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use("/alunos", alunosRoutes);
 
